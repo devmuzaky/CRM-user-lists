@@ -1,0 +1,64 @@
+.main-page-container {
+  height: 100vh;
+}
+
+
+::ng-deep .p-toolbar {
+  border: none !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  height: 64px !important;
+  background-color: #FFFFFF !important;
+  align-content: space-around;
+}
+
+
+.header {
+  align-items: center;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    border: none !important;
+  }
+
+  .toolbar-container {
+    width: 100%;
+  }
+
+  .p-toolbar {
+    border: none !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    height: 64px;
+  }
+}
+
+
+.left-section {
+  display: flex;
+  align-items: center;
+
+  .rectangle-shape {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    background-color: #C4C4C4;
+  }
+}
+
+.page-name {
+  color: #1B2733;
+  font-family: Roboto, serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  margin-left: 10px;
+}
+
+.user-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

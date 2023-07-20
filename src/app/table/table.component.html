@@ -1,51 +1,54 @@
 <div class="container-table" *ngIf="users$ | async as users">
 
-  <div class="row">
-    <div class="col-12">
-      <h1>Users List</h1>
+  <div class="table-title">
+    <div class="col-12 user-list-text">
+      Users List
     </div>
 
-    <p>
-      lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <p class="page-description">
+      lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos quae. Quisquam, quos quae. Quisquam, quos
     </p>
 
   </div>
 
+
   <p-table
-    [value]="users"
+    [value]="getDupicatedUsers(users)"
     [paginator]="true"
     [rows]="6"
     [showCurrentPageReport]="true"
-    [tableStyle]="{ 'min-width': '50rem' }"
+    [tableStyle]="{ 'min-width': '25rem', marginTop: '25px' }" [responsive]="true"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [showFirstLastIcon]="false"
   >
+
     <ng-template pTemplate="header">
       <tr>
-        <th style="width:25%">Photo</th>
-        <th style="width:25%">First Name</th>
-        <th style="width:25%">Last Name</th>
-        <th style="width:25%">Email</th>
-        <th style="width:25%"></th>
+        <th class="th-style" style="width:5%">Photo</th>
+        <th class="th-style">First Name</th>
+        <th class="th-style">Last Name</th>
+        <th class="th-style">Email</th>
+        <th class="th-style" style="width:25%"></th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-user>
+    <ng-template style="width: 1296px; height: 72px" pTemplate="body" let-user let-i="index">
       <tr>
         <td>
-          <img
-            [src]="user.avatar"
-            width="32"
-          />
+          <img class="p-avatar avatar-style" [src]="user.avatar" width="32" alt="user photo"/>
         </td>
-        <td>{{ user.first_name }}</td>
-        <td>{{ user.last_name }}</td>
-        <td>{{ user.email }}</td>
+        <td class="tb-style" >{{ user.first_name }}</td>
+        <td class="tb-style">{{ user.last_name }}</td>
+        <td class="tb-style email-style">{{ user.email }}</td>
         <td>
           <button
+            (click)="sendEmail(user.email)"
             pButton
             type="button"
-            class="p-button-primary p-button-rounded">
-            <i class="pi pi-send"></i>
-            send email
+            class="p-button-primary send-button p-button-rounded">
+            <img class="btn-icon" style="width: 24px; height: 24px" src="assets/send_24px.svg" alt="send icon">
+            <div class="btn-text">
+              Send Email
+            </div>
           </button>
 
         </td>

@@ -1,4 +1,149 @@
-.container-table{
-  padding: 0 1rem;
-  background-color: #F7F9FA;
+:root {
+  --primary-normal: #004A9B;
+  --font-roboto: Roboto, cursive;
+  --font-size-14: 14px;
 }
+
+
+.container-table {
+  margin: 24px 0;
+}
+
+tr:nth-child(even) {
+  background-color: #FFFFFF !important;
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(247, 249, 250, 0.47) !important;
+}
+
+.th-style {
+  width: 25%;
+  color: #92929D;
+  font-family: --font-roboto;
+  font-size: --font-size-14;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+
+}
+
+.avatar-style {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+
+.send-button {
+  display: inline-flex;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 8px;
+  background: var(--primary-normal);
+
+  .btn-text {
+    font-family: --font-roboto;
+    font-size: --font-size-14;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+  }
+
+  .btn-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+}
+
+
+.user-list-text {
+  color: #172B4D;
+  font-family: --font-roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.page-description {
+  color: #5E7191;
+  font-family: --font-roboto;
+  font-size: --font-size-14;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.table-title {
+  margin-bottom: 33px;
+}
+
+.tb-style {
+  color: #42526E;
+  font-family: --font-roboto;
+  font-size: --font-size-14;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.email-style {
+  color: --primary-normal;
+  font-weight: 700;
+}
+
+
+::ng-deep .p-paginator .p-paginator-current {
+  margin-right: auto;
+}
+
+::ng-deep .p-paginator-left-content {
+  margin-right: 0 !important;
+}
+
+::ng-deep .p-paginator-right-content {
+  margin-left: 0 !important;
+}
+
+::ng-deep .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  color: #0062FF;
+  font-family: --font-roboto;
+  font-size: --font-size-14;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+}
+
+::ng-deep .p-link {
+  color: #0062FF;
+  font-family: --font-roboto;
+  font-size: --font-size-14;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border: none !important;
+
+  // If you want to remove hover effect or the background color on the paginator buttons, uncomment the following lines:
+  background: none !important;
+  border-color: none !important;
+
+
+  &:focus {
+    outline: none !important;
+    outline-offset: none !important;
+    box-shadow: 0 0 0 0.2rem #ffffff;
+  }
+
+
+}
+
+
+
+
+

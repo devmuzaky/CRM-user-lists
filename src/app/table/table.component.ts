@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, TemplateRef} from '@angular/core';
 import {UsersService} from "../services/users.service";
 import {User} from "../models/user";
-import {Observable} from "rxjs";
+import {first, last, Observable} from "rxjs";
 
 @Component({
   selector: 'app-table',
@@ -18,4 +18,17 @@ export class TableComponent implements OnInit {
     this.users$ = this.usersService.getUsers();
   }
 
+
+  sendEmail(email: string) {
+    window.open(`mailto:${email}?subject= &body=Hi%20Widebot%20I%20am%20Mohamed%20Zaky`);
+  }
+
+  getDupicatedUsers(users: User[]) {
+    let dupicatedUsers: User[] = [];
+    for (let i = 0; i < 4; i++) {
+      dupicatedUsers = dupicatedUsers.concat(users);
+
+    }
+    return dupicatedUsers;
+  }
 }

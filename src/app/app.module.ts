@@ -9,6 +9,7 @@ import {ButtonModule} from "primeng/button";
 import {UsersService} from "./services/users.service";
 import {HttpClientModule} from "@angular/common/http";
 import { MainPageComponent } from './main-page/main-page.component';
+import {ToolbarModule} from "primeng/toolbar";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MainPageComponent } from './main-page/main-page.component';
     BrowserAnimationsModule,
     TableModule,
     ButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    ToolbarModule
   ],
   providers: [
     UsersService
