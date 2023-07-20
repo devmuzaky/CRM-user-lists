@@ -13,9 +13,7 @@ export class UsersService {
 
   getUsers(): Observable<User[]> {
     return this.http.get<any>('https://reqres.in/api/users')
-      .pipe(
-        map((response: any) => response.data as User[])
-      );
+      .pipe(map((response: any) => response.data as User[]));
   }
 
 }

@@ -25,8 +25,6 @@ tr:nth-child(odd) {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-
-
 }
 
 .avatar-style {
@@ -43,7 +41,7 @@ tr:nth-child(odd) {
   align-items: center;
   gap: 4px;
   border-radius: 8px;
-  background: var(--primary-normal);
+  background: --primary-normal;
 
   .btn-text {
     font-family: --font-roboto;
@@ -57,7 +55,6 @@ tr:nth-child(odd) {
     width: 16px;
     height: 16px;
   }
-
 }
 
 
@@ -117,7 +114,6 @@ tr:nth-child(odd) {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-
 }
 
 ::ng-deep .p-link {
@@ -140,10 +136,4 @@ tr:nth-child(odd) {
     box-shadow: 0 0 0 0.2rem #ffffff;
   }
 
-
 }
-
-
-
-
-

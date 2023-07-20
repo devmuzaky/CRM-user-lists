@@ -1,4 +1,4 @@
-<div class="container-table" *ngIf="users$ | async as users">
+<div *ngIf="users$ | async as users" class="container-table">
 
   <div class="table-title">
     <div class="col-12 user-list-text">
@@ -13,13 +13,13 @@
 
 
   <p-table
-    [value]="getDupicatedUsers(users)"
     [paginator]="true"
+    [responsive]="true"
     [rows]="6"
     [showCurrentPageReport]="true"
-    [tableStyle]="{ 'min-width': '25rem', marginTop: '25px' }" [responsive]="true"
+    [showFirstLastIcon]="false" [tableStyle]="{ 'min-width': '25rem', marginTop: '25px' }"
+    [value]="users"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-    [showFirstLastIcon]="false"
   >
 
     <ng-template pTemplate="header">
@@ -31,21 +31,21 @@
         <th class="th-style" style="width:25%"></th>
       </tr>
     </ng-template>
-    <ng-template style="width: 1296px; height: 72px" pTemplate="body" let-user let-i="index">
+    <ng-template let-i="index" let-user pTemplate="body" style="width: 1296px; height: 72px">
       <tr>
         <td>
-          <img class="p-avatar avatar-style" [src]="user.avatar" width="32" alt="user photo"/>
+          <img [src]="user.avatar" alt="user photo" class="p-avatar avatar-style" width="32"/>
         </td>
-        <td class="tb-style" >{{ user.first_name }}</td>
+        <td class="tb-style">{{ user.first_name }}</td>
         <td class="tb-style">{{ user.last_name }}</td>
         <td class="tb-style email-style">{{ user.email }}</td>
         <td>
           <button
             (click)="sendEmail(user.email)"
+            class="p-button-primary send-button p-button-rounded"
             pButton
-            type="button"
-            class="p-button-primary send-button p-button-rounded">
-            <img class="btn-icon" style="width: 24px; height: 24px" src="assets/send_24px.svg" alt="send icon">
+            type="button">
+            <img alt="send icon" class="btn-icon" src="assets/send_24px.svg" style="width: 24px; height: 24px">
             <div class="btn-text">
               Send Email
             </div>
@@ -55,10 +55,10 @@
       </tr>
     </ng-template>
     <ng-template pTemplate="paginatorleft">
-      <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+      <p-button icon="pi pi-plus" styleClass="p-button-text" type="button"></p-button>
     </ng-template>
     <ng-template pTemplate="paginatorright">
-      <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+      <p-button icon="pi pi-cloud" styleClass="p-button-text" type="button"></p-button>
     </ng-template>
   </p-table>
 </div>
