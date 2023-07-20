@@ -14,7 +14,9 @@ export class TableComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.users$ = this.usersService.getUsers();
+    const page = 1;
+    const perPage = 6;
+    this.users$ = this.usersService.getUsers(page, perPage);
   }
 
 
@@ -22,11 +24,12 @@ export class TableComponent implements OnInit {
     window.open(`mailto:${email}?subject=Hey%20Widebot🎊&body=Hi%20Widebot%20I%20am%20Mohamed%20Zaky🙌`);
   }
 
+
+  // This function is just for testing Pagination
   getDuplicatedUsers(users: User[]) {
     let duplicatedUsers: User[] = [];
     for (let i = 0; i < 4; i++) {
       duplicatedUsers = duplicatedUsers.concat(users);
-
     }
     return duplicatedUsers;
   }

@@ -137,3 +137,23 @@ tr:nth-child(odd) {
   }
 
 }
+
+::ng-deep .p-paginator-left-content {
+  background: none !important;
+  border-color: none !important;
+  cursor: none !important;
+
+  &:focus {
+    outline: none !important;
+    outline-offset: none !important;
+    box-shadow: 0 0 0 0.2rem #ffffff;
+  }
+}
+
+::ng-deep .p-paginator-right-content {
+  display: none !important;
+}
+
+::ng-deep .p-paginator-left-content {
+  display: none !important;
+}
