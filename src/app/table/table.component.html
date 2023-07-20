@@ -1,0 +1,61 @@
+<div class="container-table" *ngIf="users$ | async as users">
+
+  <div class="row">
+    <div class="col-12">
+      <h1>Users List</h1>
+    </div>
+
+    <p>
+      lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </p>
+
+  </div>
+
+  <p-table
+    [value]="users"
+    [paginator]="true"
+    [rows]="6"
+    [showCurrentPageReport]="true"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width:25%">Photo</th>
+        <th style="width:25%">First Name</th>
+        <th style="width:25%">Last Name</th>
+        <th style="width:25%">Email</th>
+        <th style="width:25%"></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>
+          <img
+            [src]="user.avatar"
+            width="32"
+          />
+        </td>
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button
+            pButton
+            type="button"
+            class="p-button-primary p-button-rounded">
+            <i class="pi pi-send"></i>
+            send email
+          </button>
+
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="paginatorleft">
+      <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+    </ng-template>
+    <ng-template pTemplate="paginatorright">
+      <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+    </ng-template>
+  </p-table>
+</div>
