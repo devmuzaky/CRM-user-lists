@@ -1,6 +1,7 @@
 CRM - Users List
 =============
-This project is a Customer Relationship Management (CRM) application that manages a list of users and their information. It is built using Angular, a powerful front-end framework, to provide a user-friendly interface and seamless interactions. The app allows users to view and interact with a list of users, including sending emails, editing user details, and more.
+
+- This project is a Customer Relationship Management (CRM) application that manages a list of users and their information. It is built using Angular, a powerful front-end framework, to provide a user-friendly interface and seamless interactions. The app allows users to view and interact with a list of users, including sending emails, editing user details, and more.
 Purpose
 -------
 
