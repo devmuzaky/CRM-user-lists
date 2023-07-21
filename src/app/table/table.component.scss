@@ -60,7 +60,7 @@ tr:nth-child(odd) {
 
 .user-list-text {
   color: #172B4D;
-  font-family: --font-roboto;
+  font-family: --font-roboto, serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -69,7 +69,7 @@ tr:nth-child(odd) {
 
 .page-description {
   color: #5E7191;
-  font-family: --font-roboto;
+  font-family: --font-roboto, serif;
   font-size: --font-size-14;
   font-style: normal;
   font-weight: 400;
@@ -156,4 +156,59 @@ tr:nth-child(odd) {
 
 ::ng-deep .p-paginator-left-content {
   display: none !important;
+}
+
+
+// media queries for small screens
+
+
+ @media screen and (max-width: 768px) {
+  .container-table {
+    margin: 24px 0;
+  }
+
+  .table-title {
+    margin-bottom: 33px;
+  }
+
+  .user-list-text {
+    font-size: 20px;
+  }
+
+  .page-description {
+    font-size: 13px;
+  }
+
+  .th-style {
+    width: 25%;
+    font-size: 13px;
+  }
+
+  .tb-style {
+    font-size: 13px;
+  }
+
+  .email-style {
+    font-size: 13px;
+  }
+
+  .send-button {
+    padding: 8px 16px;
+    gap: 4px;
+
+
+    .btn-text {
+      display: none;
+    }
+
+    .btn-icon {
+      width: 13px;
+      height: 13px;
+    }
+  }
+
+  .avatar-style {
+    width: 32px;
+    height: 32px;
+  }
 }

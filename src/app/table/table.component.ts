@@ -1,15 +1,17 @@
 import {Component, OnInit} from '@angular/core';
 import {UsersService} from "../services/users.service";
 import {User} from "../models/user";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
+import {LazyLoadEvent} from "primeng/api";
 
 @Component({
   selector: 'app-table', templateUrl: './table.component.html', styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
 
-  users$: Observable<User[]> = new Observable<User[]>();
+  private usersSubject$: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
+  public users$: Observable<User[]> = this.usersSubject$.asObservable();
 
   constructor(public usersService: UsersService, private route: ActivatedRoute) {
   }
@@ -23,7 +25,11 @@ export class TableComponent implements OnInit {
         if (params.has('page')) page = Number(params.get('page'));
         if (params.has('perPage')) perPage = Number(params.get('perPage'));
 
-        this.users$ = this.usersService.getUsers(page, perPage);
+        this.usersService.getUsers(page, perPage).subscribe(
+          (users) => {
+            this.usersSubject$.next(users);
+          }
+        )
       });
   }
 
@@ -40,5 +46,19 @@ export class TableComponent implements OnInit {
       duplicatedUsers = duplicatedUsers.concat(users);
     }
     return duplicatedUsers;
+  }
+
+  lazyLoadUsers($event: LazyLoadEvent) {
+    console.log("in lazyLoadUsers")
+    if ($event.first == undefined) return;
+    if ($event.rows  == undefined) return;
+
+    let page = $event.first / $event.rows + 1;
+    let perPage = $event.rows;
+    console.log(page, perPage);
+    this.usersService.getUsers(page, perPage).subscribe(
+      (users) => {
+        this.usersSubject$.next(users);
+      });
   }
 }

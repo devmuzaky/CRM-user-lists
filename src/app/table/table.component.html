@@ -15,6 +15,7 @@
   <p-table
     [paginator]="true"
     [lazy]="true"
+    (onLazyLoad)="lazyLoadUsers($event)"
     [rows]="usersService.perPage"
     [totalRecords]="usersService.total"
     [first]="(usersService.page - 1) * usersService.perPage"
