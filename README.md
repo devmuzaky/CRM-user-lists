@@ -35,10 +35,10 @@ Features
 2. Utilizing PrimeNG's Table component to present the user data in a structured and visually appealing manner.
 3. Implementing alternating row backgrounds for enhanced readability and a more organized user list.
 4. Integrating PrimeNG Paginator for smooth pagination, enabling users to navigate through the list efficiently.
+5. Adding support for pagination using query parameters.
 5. Displaying user details, including their photo, name, email, and other relevant information, in a well-designed card layout.
 6. Enabling users to send emails to individual users through the "Send Email" button using PrimeNG's Button component.
 7. Applying responsive design principles to ensure a seamless experience across various devices and screen sizes.
-
 
 
 * * * * *
