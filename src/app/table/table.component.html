@@ -14,8 +14,11 @@
 
   <p-table
     [paginator]="true"
+    [lazy]="true"
+    [rows]="usersService.perPage"
+    [totalRecords]="usersService.total"
+    [first]="(usersService.page - 1) * usersService.perPage"
     [responsive]="true"
-    [rows]="6"
     [showCurrentPageReport]="true"
     [showFirstLastIcon]="false" [tableStyle]="{ 'min-width': '25rem', marginTop: '25px' }"
     [value]="users"

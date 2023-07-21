@@ -10,6 +10,7 @@ import {UsersService} from "./services/users.service";
 import {HttpClientModule} from "@angular/common/http";
 import {MainPageComponent} from './main-page/main-page.component';
 import {ToolbarModule} from "primeng/toolbar";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -23,10 +24,13 @@ import {ToolbarModule} from "primeng/toolbar";
     TableModule,
     ButtonModule,
     HttpClientModule,
-    ToolbarModule
+    ToolbarModule,
+    RouterModule.forRoot([
+      { path: '**', component: AppComponent },
+    ]),
   ],
   providers: [
-    UsersService
+    UsersService,
   ],
   bootstrap: [AppComponent]
 })
